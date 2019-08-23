@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import CityInput from './components/CityInput';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    weatherData: null,
+  }
+
+  getWeather(cityName) {
+    const apiKey = '942b001a12073846ceb89fb33e10be0b'
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&lang=fr&units=metric&appid=${apiKey}`)
+      .then(res => res.json())
+      .then(data => this.setState({weatherData: data}));
+  }
+
+  render(){
+    return (
+      <div className="App">
+        <h1>React weather</h1>
+        <CityInput submitCityName={cityName => this.getWeather(cityName)}/>
+      </div>
+    )
+  }
 }
 
 export default App;
