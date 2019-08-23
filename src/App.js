@@ -30,7 +30,9 @@ class App extends Component {
       <div className="App">
         <h1>React weather</h1>
         <CityInput submitCityName={cityName => this.getWeather(cityName)}/>
-        {weatherCard}
+        <div className="container">
+          {weatherCard}
+        </div>
       </div>
     )
   }
