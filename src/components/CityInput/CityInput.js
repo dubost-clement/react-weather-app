@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './CityInput';
+import './CityInput.css';
 
 class CityInput extends Component {
     state = {
@@ -8,13 +8,13 @@ class CityInput extends Component {
 
     submitCity(event) {
         event.preventDefault();
-        const {cityName} = this.state
+        const {cityName} = this.state;
 
-        this.props.submitCityName(cityName)
+        this.props.submitCityName(cityName);
     }
 
     inputCityValue(event) {
-        this.setState({cityName: event.target.value})
+        this.setState({cityName: event.target.value});
     }
 
     render(){
