@@ -19,10 +19,10 @@ class App extends Component {
     let weatherCard = null;
 
     if (this.state.weatherData) {
-      const { name, main, weather } = this.state.weatherData;
+      const { name, main, weather, sys } = this.state.weatherData;
 
       weatherCard = (
-        <WeatherCard city={name} temp={main.temp} description={weather[0].description} humidity={main.humidity}/>
+        <WeatherCard city={name} temp={main.temp} description={weather[0].description} humidity={main.humidity} sunset={sys.sunset}/>
       );
     }
 
