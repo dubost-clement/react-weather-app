@@ -10,7 +10,7 @@ class App extends Component {
 
   getWeather(cityName) {
     const apiKey = '942b001a12073846ceb89fb33e10be0b'
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&lang=fr&units=metric&appid=${apiKey}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName},FR&lang=fr&units=metric&appid=${apiKey}`)
       .then(res => res.json())
       .then(data => this.setState({weatherData: data})); 
   }
@@ -22,7 +22,7 @@ class App extends Component {
       const { name, main, weather } = this.state.weatherData;
 
       weatherCard = (
-        <WeatherCard city={name} temp={main.temp} description={weather[0].description}/>
+        <WeatherCard city={name} temp={main.temp} description={weather[0].description} humidity={main.humidity}/>
       );
     }
 
