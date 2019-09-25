@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './CityInput.css';
 
 class CityInput extends Component {
   state = {
@@ -19,9 +18,12 @@ class CityInput extends Component {
 
   render() {
     return (
-      <form onSubmit={event => this.submitCity(event)}>
-        <input type="text" onChange={event => this.inputCityValue(event)} />
-        <button type="submit">Rechercher</button>
+      <form className="input-group my-3 my-sm-5" onSubmit={event => this.submitCity(event)}>
+        <input className="form-control" type="search" onChange={event => this.inputCityValue(event)}/>
+        <div className="input-group-append">
+          <button className="btn btn-success" type="submit">Rechercher</button>
+        </div>
+        
       </form>
     )
   }
