@@ -2,12 +2,13 @@ import React from 'react';
 import Moment from 'react-moment';
 import 'moment-timezone';
 import 'moment/locale/fr';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTint, faThermometerThreeQuarters, faGlobeAmericas } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTint, faThermometerThreeQuarters, faGlobeAmericas } from '@fortawesome/free-solid-svg-icons';
 import './WeatherCard.css';
+import Gmap from '../Gmap/Gmap';
 
 const WeatherCard = (props) => {
-  const { name, main, weather, sys, wind, dt } = props.weatherData;
+  const { name, main, weather, sys, wind, dt, coord } = props.weatherData;
   const temp = Math.round(main.temp);
   const windSpeed = Math.round(wind.speed * 3.6);
  
@@ -62,7 +63,9 @@ const WeatherCard = (props) => {
         </div>
       </div>
       <div className="col-lg-4 mt-3 mt-lg-0">
-        <div className="rounded" id="g-map"></div>
+        <div className="rounded" id="g-map">
+          <Gmap markerPosition={coord}/>
+        </div>
       </div>
     </div>
   )

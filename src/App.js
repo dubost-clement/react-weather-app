@@ -15,7 +15,7 @@ class App extends Component {
   getWeather(cityName) {
     const apiKey = '942b001a12073846ceb89fb33e10be0b'
     if(cityName) {
-      axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName},FR&lang=fr&units=metric&appid=${apiKey}`)
+      axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&lang=fr&units=metric&appid=${apiKey}`)
       .then(response => {
         this.setState({weatherData: response.data, cityError: false});
       })

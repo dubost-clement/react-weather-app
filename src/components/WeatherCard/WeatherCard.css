@@ -5,3 +5,8 @@
 .weather-data {
     border-right: 1px solid white;
 }
+
+#g-map {
+    height: 100%;
+    width: 100%;
+}
