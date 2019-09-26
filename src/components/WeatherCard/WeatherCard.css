@@ -6,6 +6,22 @@
     border-right: 1px solid white;
 }
 
+#weatherIcon {
+    font-size: 60px;
+}
+
+@media screen and (max-width: 767px) {
+    .weather-data{
+        border-top: 1px solid white;
+        border-right: none;
+    }
+
+    .weather-data-last {
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+    }
+}
+
 #g-map {
     height: 100%;
     width: 100%;

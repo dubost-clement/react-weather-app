@@ -2,9 +2,11 @@ import React from 'react';
 import Moment from 'react-moment';
 import 'moment-timezone';
 import 'moment/locale/fr';
+import 'weather-icons/css/weather-icons.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTint, faThermometerThreeQuarters, faGlobeAmericas } from '@fortawesome/free-solid-svg-icons';
 import './WeatherCard.css';
+import WeatherIcon from './WeatherIcon';
 import Gmap from '../Gmap/Gmap';
 
 const WeatherCard = (props) => {
@@ -15,19 +17,19 @@ const WeatherCard = (props) => {
   return (
     <div className="row mt-sm-5">
       <div className="col-lg-8">
-        <div className="weather p-3 text-white rounded">
+        <div className="weather p-3 text-white font-weight-bold rounded">
           <div className="row">
             <div className="col-6">
-              <p className="mb-0"><FontAwesomeIcon icon={faGlobeAmericas} size="2x" />{name}</p>
+              <p className="mb-0"><FontAwesomeIcon icon={faGlobeAmericas} className="mr-1"/>{name}</p>
             </div>
 
             <div className="col-6">
-              <p className="text-right mb-0"><FontAwesomeIcon icon={faThermometerThreeQuarters} size="2x" />{temp}°</p>
+              <p className="text-right mb-0"><FontAwesomeIcon icon={faThermometerThreeQuarters} className="mr-1"/>{temp}°</p>
             </div>
           </div>
 
           <div className="text-center mb-5">
-            <p id="weatherIcon" className="mb-0"><i className="${this.icon}"></i></p>
+            <WeatherIcon weather={weather[0].description}/>
             <p>{weather[0].description}</p>
           </div>
 

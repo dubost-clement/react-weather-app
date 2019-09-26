@@ -50,9 +50,7 @@ class App extends Component {
           <div className="container">
             {error}
             <CityInput submitCityName={cityName => this.getWeather(cityName)}/>
-            <div className="container">
-              {weatherCard}
-            </div>
+            {weatherCard}
           </div>
         </section>
         <Footer />
