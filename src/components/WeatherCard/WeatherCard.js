@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTint, faThermometerThreeQuarters, faGlobeAmericas } from '@fortawesome/free-solid-svg-icons';
 import './WeatherCard.css';
 import WeatherIcon from './WeatherIcon';
+import WindDirection from './WindDirection';
 import Gmap from '../Gmap/Gmap';
 
 const WeatherCard = (props) => {
@@ -42,7 +43,7 @@ const WeatherCard = (props) => {
 
             <div className="col-md-4 weather-data">
               <h3 className="h4 text-center mb-4 mt-3 mt-md-0">Vent</h3>
-              <p className="mb-1">Direction</p>
+              <WindDirection wind={wind.deg}/>
               <p>Vitesse {windSpeed} km/h</p> 
             </div>
 
