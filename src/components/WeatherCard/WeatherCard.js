@@ -3,8 +3,7 @@ import Moment from 'react-moment';
 import 'moment-timezone';
 import 'moment/locale/fr';
 import 'weather-icons/css/weather-icons.min.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTint, faThermometerThreeQuarters, faGlobeAmericas } from '@fortawesome/free-solid-svg-icons';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import './WeatherCard.css';
 import WeatherIcon from './WeatherIcon';
 import WindDirection from './WindDirection';
@@ -21,11 +20,11 @@ const WeatherCard = (props) => {
         <div className="weather p-3 text-white font-weight-bold rounded">
           <div className="row">
             <div className="col-6">
-              <p className="mb-0"><FontAwesomeIcon icon={faGlobeAmericas} className="mr-1"/>{name}</p>
+              <p className="mb-0"><i className="fas fa-globe-americas mr-1"></i>{name}</p>
             </div>
 
             <div className="col-6">
-              <p className="text-right mb-0"><FontAwesomeIcon icon={faThermometerThreeQuarters} className="mr-1"/>{temp}°</p>
+              <p className="text-right mb-0"><i className="fas fa-thermometer-three-quarters mr-1"></i>{temp}°</p>
             </div>
           </div>
 
@@ -50,7 +49,7 @@ const WeatherCard = (props) => {
             <div className="col-md-4 weather-data-last">
               <h3 className="h4 text-center mb-4 mt-3 mt-md-0">Divers</h3>
               <p className="mb-1">Pression {main.pressure}hPa</p>
-              <p><FontAwesomeIcon icon={faTint} size="2x" />{main.humidity}%</p>
+              <p><i className="fas fa-tint"></i>{main.humidity}%</p>
             </div>
           </div>
             
